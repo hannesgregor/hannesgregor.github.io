@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+@media(max-width: 768px){
+
+#navshow {
+        height: 100vh;
+        width: 100%; 
+}
+#navshow img {
+    height: 300px;
+    margin: none;
+    padding: none;
+}
+
+#navshow h1  {
+    display: none;
+}
+#navbar {
+        width: 80%;
+        float: none;
+        text-align: center;
+        display: block;
+}
+#navbar h1 {
+    width: 100%;
+    float: none;
+    padding: 0;
+}
+#navbar ul {
+    float: none;
+    display: block;
+    flex-direction: column;
+    width: 100%;
+}
+#navbar ul li {
+    float: none;
+    display: block;
+    width: 100%;
+    
+    
+}
+#navbar .container {
+    height: 150px;
+    display: block;
+}
+.row {
+    margin-top: 100px;
+}
+.row .btn {
+    display: block;
+    float: right;
+    width: 50%;
+    margin-top: 5px;
+}
+.card {
+    float: none;
+    width: 100%;
+}
+
+.education {
+    padding-top: 300px;
+}
+.oskused{
+    float: none;
+    margin: auto;
+    margin-top: 50px;
+    width: 80%;
+    text-align: center;
+}
+#resumeProficiencies {
+    width: 100%;
+    float: none;
+    margin: auto;
+    text-align: center;
+}
+.carousel-indicators {
+	padding-bottom: 150px;
+
+}
+#showcase {
+    height: 100vh;
+}
+#showcase .showcase-content {
+    height: 100%;
+    
+}
+#showcase .showcase-content h1 p {
+    padding-top: 0;
+}
+#KHK {
+    height: 100vh;
+}
+
+#minust {
+    padding: 0;
+    height: 30px;
+    width: 100%;
+    float: none;
+    text-align: center;
+    display: block;
+}
+
+#minust .about {
+    float: none;
+    display: block;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+#minust .about ul {
+    padding: 0;
+    align-content: center;
+}
+
+#minust .about ul li {
+    width: 100%;
+    padding: 5px;
+    float: none;
+    display: block;
+    flex-direction: column;
+}
+footer {
+    width: 100%;
+    text-align: center;
+}
+}
