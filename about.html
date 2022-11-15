@@ -64,11 +64,11 @@
    </div>
   </footer>
   
- <script>
+<script>
   const message = '<a data-sm-show-media-selection-on="click" href="javascript:void(0);">Contact Us</a>';
   const phoneArr = Array.from(document.body.querySelectorAll(".phone-number"));
 
-  sm.getApi({version: 'v1'}).then((glia) => {
+  window.sm.getApi({version: 'v1'}).then((glia) => {
     const onQueueStateUpdate = (queueState) => {
       // Replace phone number elements with the control when a queue with audio or phone ability is available.
       if (queueState.state === queueState.QUEUE_STATES.CAN_QUEUE &&
@@ -93,26 +93,10 @@
   phoneArr.forEach((elem) => {
     elem.setAttribute("glia-phone-original", elem.innerHTML);
   });
-    const waitForSM = new Promise((resolve) => {
-    if (window.sm) {
-      return resolve();
-    }
-  
-    const interval = setInterval(() => {
-      if (window.sm) {
-        clearInterval(interval);
-        resolve();
-      }
-    }, 200);
-  });
-  
-  waitForSM.then(() => {
-    window.sm.getApi({ version: "v1" }).then(function (api) {
-       // Add listener to act in case any queue state is changed.
+
+  // Add listener to act in case any queue state is changed.
   glia.addEventListener(glia.EVENTS.QUEUE_STATE_UPDATE, onQueueStateUpdate);
     });
-    });
-  });
 </script>
 
 </body>
