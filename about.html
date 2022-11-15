@@ -68,7 +68,7 @@
   const message = '<a data-sm-show-media-selection-on="click" href="javascript:void(0);">Contact Us</a>';
   const phoneArr = Array.from(document.body.querySelectorAll(".phone-number"));
 
-  window.sm.getApi({version: 'v1'}).then((glia) => {
+  sm.getApi({version: 'v1'}).then((glia) => {
     const onQueueStateUpdate = (queueState) => {
       // Replace phone number elements with the control when a queue with audio or phone ability is available.
       if (queueState.state === queueState.QUEUE_STATES.CAN_QUEUE &&
