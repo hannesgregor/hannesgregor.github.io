@@ -1,51 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="./styles.css">
     <script async src="https://api.glia.com/salemove_integration.js"></script>
-    <script async src="./onscreen.js"></script>
-    
-    <style type="text/css">
-        #footer {
-          position: fixed;
-          left: 0;
-          bottom: 0;
-          width: 100%;
-          /* Height of the footer*/ 
-          height: 40px;
-          background: grey;
-        }
-      
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          background-color: #333;
-        }
-
-        li {
-          float: left;
-        }
-
-        li a {
-          display: block;
-          color: white;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-        }
-
-        /* Change the link color to #111 (black) on hover */
-        li a:hover {
-          background-color: #111;
-        }
-        .active {
-          background-color: #04AA6D;
-        }
-    </style>
-
-  </head>
-<body style="background-color:beige;">
+ </head>
+<body>
   
 
 <ul>
@@ -54,7 +13,7 @@
   <li><a href="https://hannesgregor.github.io/firstlink.html">Github</a></li>
 </ul>
   
-  <p><span class="phone-number"><a href="tel:(555) 2555-5555">(555) 555-5555</a></span></p>
+  <p><span class="phone-number"><a href="tel:(555) 2555-5555">(555)o 555-5555</a></span></p>
   
   <div class="alert">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
@@ -69,9 +28,7 @@
       onclick="document.body.appendChild(document.createElement('sm-visitor-code'))">
       Get CoBrowsing code
     </button>
-     
    </div>
-   <p><span class="phone-number"><a href="tel:(555) 3555-5555">(555) 555-5555</a></span></p>
   </footer>
  
 </body>
