@@ -2,7 +2,7 @@ body {
   background-color:beige;
 }
 
-a {
+message {
   border: none;
   color: red;
   padding: 15px 32px;
@@ -14,7 +14,7 @@ a {
   cursor: pointer;
 }
 
-.a {
+.message {
   border: none;
   color: green;
   padding: 15px 32px;
