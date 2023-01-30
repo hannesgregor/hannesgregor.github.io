@@ -1,4 +1,5 @@
 const message = '<a data-sm-show-media-selection-on="click" href="javascript:void(0);">Contact Us</a>';
+message.color = "green";
 const phoneArr = Array.from(document.body.querySelectorAll(".phone-number"));
 
     sm.getApi({version: 'v1'}).then((glia) => {
