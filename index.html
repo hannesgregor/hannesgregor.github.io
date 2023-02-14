@@ -3,27 +3,30 @@
   <head>
     <link rel="stylesheet" href="./styles.css">
     <script async src="https://api.glia.com/salemove_integration.js"></script>
-    
-   <script>
-    window.addEventListener("DOMContentLoaded", function () {
-      sm.getApi({version: 'v1'}).then(function(salemove) {
-        salemove.getQueues().then(function(queues) {
-        var queueIds = queues.map(function(queue) {
-            return queue.id;
-    });
-    salemove.subscribeToQueueStateUpdates(queueIds, function(queue) {
-        var button = findButtonByQueue(queue.id);
-        if (queue.state.status === queue.state.STATUSES.OPEN) {
-            updateQueueButtonMedia(queue.state.medias);
-            showQueueButton(button);
-        } else {
-            hideQueueButton(button);
-        }
-})
-})
-});
-    });
-  </script>
+   
+    <input onclick="checkStats()" type="button" value="Nothing" id="btn"></input>
+    <script>
+    function checkStats(){
+        sm.getApi({version: 'v1'}).then(function(salemove) {
+                salemove.getQueues().then(function(queues) {
+                    var queueIds = queues.map(function(queue) {
+                        return queue.id;
+                    });
+                    salemove.subscribeToQueueStateUpdates(queueIds, function(queue) {
+                        var queueButton = document.getElementById("btn");
+                        if (queue.state.status === queue.state.STATUSES.OPEN) {
+                            queueButton.value ="something";
+                            console.log(queue.state.status);
+                        } else {
+                            console.log(queue.state.status);
+                            queueButton.value = queue.state.status;
+                        }
+                    })
+                });
+        });
+    }
+    </script>
+   
     
  </head>
 <body>
