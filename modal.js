@@ -9,8 +9,16 @@ sm.getApi({version: 'v1'}).then(function(salemove) {
         var queueButton = document.getElementById("btn");
         if (queue.state.status === queue.state.STATUSES.OPEN) {
                 console.log("Atleast 1 queue is open and accepting visitors");
-                    updateQueueButtonMedia(queue.state.medias);
-                    showQueueButton(button);
+                var engagementRequest = salemove.requestEngagement('text');
+                    engagementRequest.engagementPromise.then(function(engagement) {
+                      ...
+                    }).catch(function(error) {
+                      if (error.cause === salemove.ERRORS.OPERATOR_DECLINED) {
+                        console.log("Operator declined");
+                      } else {
+                        console.log("Something went wrong");
+                      }
+                    });
         } else {
             console.log("Queues are closed");
         }
