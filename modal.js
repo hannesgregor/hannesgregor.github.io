@@ -8,9 +8,11 @@ sm.getApi({version: 'v1'}).then(function(salemove) {
     salemove.subscribeToQueueStateUpdates(queueIds, function(queue) {
         var queueButton = document.getElementById("btn");
         if (queue.state.status === queue.state.STATUSES.OPEN) {
-            updateQueueButtonMedia(queue.state.medias);
-            showQueueButton(button);
+                console.log("Atleast 1 queue is open");
+                    updateQueueButtonMedia(queue.state.medias);
+                    showQueueButton(button);
         } else {
+            console.log("Queues are closed");
             hideQueueButton(button);
         }
 })
