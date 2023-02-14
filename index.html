@@ -4,10 +4,10 @@
     <link rel="stylesheet" href="./styles.css">
     <script async src="https://api.glia.com/salemove_integration.js"></script>
     
-    <script>
-    <!-- Subscribing to all queues state updates -->
+   <script>
+    window.addEventListener("DOMContentLoaded", function () {
       sm.getApi({version: 'v1'}).then(function(salemove) {
-    salemove.getQueues().then(function(queues) {
+        salemove.getQueues().then(function(queues) {
         var queueIds = queues.map(function(queue) {
             return queue.id;
     });
@@ -22,8 +22,8 @@
 })
 })
 });
-    
-    </script>
+    });
+  </script>
     
  </head>
 <body>
