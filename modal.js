@@ -13,9 +13,6 @@ sm.getApi({version: 'v1'}).then(function(salemove) {
                     showQueueButton(button);
         } else {
             console.log("Queues are closed");
-            <a data-sm-show-media-selection-on="click" href="javascript:void(0);">
-  Queues are closed!
-</a>
         }
 })
 })
