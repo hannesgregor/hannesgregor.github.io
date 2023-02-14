@@ -1,7 +1,8 @@
 sm.getApi({version: 'v1'}).then(function(salemove) {
         salemove.getQueues().then(function(queues) {
         var queueIds = queues.map(function(queue) {
-            return queue.id;
+                console.log(queue.id);
+                return queue.id;
     });
     salemove.subscribeToQueueStateUpdates(queueIds, function(queue) {
         var button = findButtonByQueue(queue.id);
