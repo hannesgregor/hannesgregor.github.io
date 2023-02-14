@@ -4,7 +4,24 @@
     <link rel="stylesheet" href="./styles.css">
     <script async src="https://api.glia.com/salemove_integration.js"></script>
     
+    <script>
+    Subscribing to all queues state updates
+  salemove.getQueues().then(function(queues) {
+    var queueIds = queues.map(function(queue) {
+      return queue.id;
+    });
+    salemove.subscribeToQueueStateUpdates(queueIds, function(queue) {
+      var button = findButtonByQueue(queue.id);
+      if (queue.state.status === queue.state.STATUSES.OPEN) {
+        updateQueueButtonMedia(queue.state.medias);
+        showQueueButton(button);
+      } else {
+        hideQueueButton(button);
+      }
+    })
+  });
     
+    </script>
     
  </head>
 <body>
