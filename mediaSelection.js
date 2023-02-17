@@ -33,57 +33,6 @@ function getButtonMedium(button) {
   return button.getAttribute('medium');
 }
 
-// The following functions define simplistic user interface transitions.
-// Replace these functions with functions that fit your user interface.
-
-function hide(element) {
-  element.style.display = 'none';
-}
-
-function show(element) {
-  element.style.display = 'block';
-}
-
-function showCanQueue(queueElement, queueMedias) {
-  // Queue is open, a set of medias available
-  queueElement.style['text-decoration'] = 'none';
-  updateQueueAvailableMedia(queueElement, queueMedias);
-}
-
-function showCannotQueue(queueElement) {
-  // Queue is closed
-  queueElement.style['text-decoration'] = 'line-through';
-  updateQueueAvailableMedia(queueElement, []); // Disables all media buttons
-}
-
-function showCannotQueueAnywhere() {
-  findAllQueueElements().forEach(showCannotQueue);
-}
-
-function showFailedToQueueView(error) {
-  findQueuingInstructionsElement().innerText = 'Sorry! Currently unavailable.';
-}
-
-function showCanQueueView() {
-  findQueuingInstructionsElement().innerHTML =
-    'Please select a queue and click a media button';
-}
-
-function showAlreadyQueuedView() {
-  findQueuingInstructionsElement().innerText =
-    'Please wait, you will be connected shortly';
-}
-
-function showCannotQueueView() {
-  findQueuingInstructionsElement().innerText = 'Queueing is currently disabled';
-}
-
-function updateQueueAvailableMedia(queueElement, medias) {
-  findMediaButtonsForQueue(queueElement).forEach(function(button) {
-    var mediaUnavailable = medias.indexOf(getButtonMedium(button)) === -1;
-    button.disabled = mediaUnavailable;
-  });
-}
 
 // The following functions integrate an user interface with multiple queue
 // buttons with Glia SDK.
