@@ -6,7 +6,7 @@ function findQueuingInstructionsElement() {
 }
 
 function findQueueElement(queueName) {
-  return document.querySelector("div.queue[queue_name='" + queueName + "']");
+  return document.querySelector("div.queue[queue_name='Video queue']");
 }
 
 function findAllQueueElements() {
