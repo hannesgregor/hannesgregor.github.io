@@ -6,7 +6,7 @@ function findQueuingInstructionsElement() {
 }
 
 function findQueueElement(queueName) {
-  return document.querySelector("div.queue[queue_name='"1460b36a-54b1-47fe-a35e-9213bd0ef141"']");
+  return document.querySelector("div.queue[queue_name='1460b36a-54b1-47fe-a35e-9213bd0ef141']");
 }
 
 function findAllQueueElements() {
