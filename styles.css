@@ -3,8 +3,8 @@ body {
 }
 
 h3 {
-  font-size: 30px;
-  color: green;
+  font-size: 30px !important;
+  color: green !important;
 }
 
 #flat {
