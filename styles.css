@@ -2,11 +2,6 @@ body {
   background-color:beige;
 }
 
-h3 {
-  font-size: 30px !important;
-  color: green !important;
-}
-
 #flat {
   border: none;
   color: red;
