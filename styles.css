@@ -3,7 +3,7 @@ body {
 }
 
 label {
-  display: flex;
+  display: flex !important;
 }
 
 #flat {
