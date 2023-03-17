@@ -2,6 +2,10 @@ body {
   background-color:beige;
 }
 
+label {
+  display: flex;
+}
+
 #flat {
   border: none;
   color: red;
