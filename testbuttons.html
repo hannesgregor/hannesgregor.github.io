@@ -33,7 +33,9 @@
   </div>
 </div>
     
-<script>    
+<script>
+  
+window.onload=function(){
 // The following functions define selectors for the example UI
 // Replace these with selectors for your UI.
 
@@ -241,6 +243,7 @@ sm.getApi({version: 'v1'}).then(function(salemove) {
     salemove.subscribeToQueueStateUpdates(queueIds, onQueueState);
   });
 });
+  }
     </script>
 
 </body>
