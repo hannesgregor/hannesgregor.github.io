@@ -15,12 +15,34 @@
   <li><a href="testbuttons.html">Test page</a></li>
 </ul>
   
-  <button class="help-button" type="button" id="help-button" name="help-button">
-    <div class="help-button-label">Let's chat</div>
+  <button class="help-button" type="button" id="help-button" name="help-button" data-sm-show-media-selection-on>
+    <div class="help-button-label">Let's chat! (1.0) </div>
           
   </button>
   
+   <button class="help-button" type="button" id="help-button" name="help-button" data-sm-show-media-selection-on>
+    <div data-sm-show-media-selection-on="click" href="javascript:void(0);">Let's chat! (1.1) </div>
+  </button>
   
+   <button class="help-button" type="button" id="help-button" name="help-button">
+    <div data-sm-show-media-selection-on="click" href="javascript:void(0);">Let's chat! (1.1) </div>
+  </button>
+  
+  <!--
+The link opens the media selection modal when the visitor clicks on it
+-->
+<a data-sm-show-media-selection-on="click" href="javascript:void(0);">
+  Contact us! (2)
+</a>
+...
+<!--
+The link opens the media selection modal when the visitor double-clicks on it
+-->
+<div data-sm-show-media-selection-on="dblclick">
+  <h3>
+    Double-click me to start an engagement! (3)
+  </h3>
+</div>
   
   
   
