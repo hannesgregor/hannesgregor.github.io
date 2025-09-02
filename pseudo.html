@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expandable Div</title>
+    <script async src="https://api.glia.com/salemove_integration.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+
+        /*
+         * This is where the :not() pseudo-class is used.
+         * It selects the div with the class 'content-area'
+         * only when it does NOT have the class 'expanded'.
+         * This allows us to hide the content by default.
+         */
+        .content-area:not(.expanded) {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        .content-area {
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out, padding 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-xl w-full bg-white rounded-2xl shadow-xl p-8 transition-all duration-300">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+            <h1 class="text-2xl font-bold text-gray-800">Dynamic Content Section</h1>
+            <button id="expandButton" class="mt-4 md:mt-0 px-6 py-2 bg-indigo-600 text-white font-semibold rounded-full shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-transform active:scale-95">
+                Expand
+            </button>
+        </div>
+        
+        <!-- This is the container that will expand and collapse -->
+        <div id="contentArea" class="content-area">
+            <div class="text-gray-700 leading-relaxed space-y-4 pt-4 pb-2">
+                <p>
+                    This is a simple, modern design to demonstrate an expanding and collapsing content area. The expansion is controlled by toggling a CSS class using JavaScript.
+                </p>
+                <p>
+                    The `:not(.expanded)` pseudo-class is a powerful tool in CSS that allows you to select elements that *do not* match a specific selector. In this case, we use it to apply styles that hide the content when it's not expanded, creating a smooth transition.
+                </p>
+                <p>
+                    You can easily add more content here, such as images, lists, or other interactive elements, and they will be revealed when the section expands.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const expandButton = document.getElementById('expandButton');
+        const contentArea = document.getElementById('contentArea');
+
+        // Set initial state
+        let isExpanded = false;
+
+        expandButton.addEventListener('click', () => {
+            isExpanded = !isExpanded;
+            
+            if (isExpanded) {
+                // Add the 'expanded' class to the content area
+                contentArea.classList.add('expanded');
+                expandButton.textContent = 'Collapse';
+                // Adjust max-height to the actual scroll height for a smooth animation
+                contentArea.style.maxHeight = contentArea.scrollHeight + "px";
+            } else {
+                // Remove the 'expanded' class
+                expandButton.textContent = 'Expand';
+                // Reset max-height to 0 for the collapse animation
+                contentArea.style.maxHeight = contentArea.scrollHeight + "px";
+                setTimeout(() => {
+                    contentArea.classList.remove('expanded');
+                    contentArea.style.maxHeight = '0px';
+                }, 10);
+            }
+        });
+    </script>
+</body>
+</html>
