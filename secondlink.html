@@ -1,37 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Full-Page Iframe</title>
   <script async src="https://api.glia.com/salemove_integration.js"></script>
   <link rel="stylesheet" href="./styles.css">
+  <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevents scrollbars on the main page */
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* Removes the default border */
+        }
+    </style>
   
  </head>
 <body>
-
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-<br>
-<a href="https://hannesgregor.github.io/">link text</a>
-
-  <div class="scrollmenu">
-  <a href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-  <a href="#support">Support</a>
-  <a href="#blog">Blog</a>
-  <a href="#tools">Tools</a>  
-  <a href="#base">Base</a>
-  <a href="#custom">Custom</a>
-  <a href="#more">More</a>
-  <a href="#logo">Logo</a>
-  <a href="#friends">Friends</a>
-  <a href="#partners">Partners</a>
-  <a href="#people">People</a>
-  <a href="#work">Work</a>
-</div>
-
-<h2>Horizontal Scrollable Menu</h2>
-<p>Resize the browser window to see the effect.</p>
+  
+<iframe src="https://hannesgregor.github.io/" frameborder="0"></iframe>
 
 </body>
 </html>
