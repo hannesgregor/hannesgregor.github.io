@@ -3,9 +3,16 @@
 <head>
   <title>Full-Page Iframe</title>
   <script async src="https://api.glia.com/salemove_integration.js"></script>
+  <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
   <style>
         body, html {
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
             height: 100%;
@@ -16,12 +23,65 @@
             height: 100%;
             border: none; /* Removes the default border */
         }
+        .form-container {
+            max-width: 600px;
+        }
     </style>
   
  </head>
-<body>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
   
 <iframe src="https://hannesgregor.github.io/secondlink.html" frameborder="0"></iframe>
+
+<!-- Main Content Area with Form -->
+    <main class="w-full flex-grow flex items-center justify-center">
+        <div class="form-container bg-white p-8 rounded-xl shadow-lg w-full">
+            <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Your Feedback Matters!</h1>
+            <p class="text-center text-gray-600 mb-8">
+                We'd love to hear your thoughts. Please fill out the form below.
+            </p>
+
+            <form id="feedback-form" class="space-y-6">
+                <!-- Name Field -->
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-150">
+                </div>
+
+                <!-- Email Field -->
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email address</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-150">
+                </div>
+
+                <!-- Message Field -->
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Your feedback..." required class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-150"></textarea>
+                </div>
+
+                <!-- Form Submission Button -->
+                <div class="flex justify-center">
+                    <button type="submit" class="w-full px-6 py-3 bg-blue-600 text-white font-medium rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150">
+                        Submit Feedback
+                    </button>
+                </div>
+            </form>
+
+            <!-- Success/Error Message Box -->
+            <div id="message-box" class="mt-8 hidden p-4 rounded-lg text-center" role="alert"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-gray-800 text-white text-center p-6 mt-8">
+        <div class="container mx-auto">
+            <p>&copy; 2023 All Rights Reserved.</p>
+            <p class="mt-2 text-sm text-gray-400">
+                Designed with ❤️ using Tailwind CSS
+            </p>
+        </div>
+    </footer>
 
 </body>
 </html>
