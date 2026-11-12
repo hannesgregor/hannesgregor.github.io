@@ -5,14 +5,31 @@
 
     
     <link rel="stylesheet" href="./styles.css">
-    <script>
-		//Read idtoken from query parameter with the same name.
-		const params = new Proxy(new URLSearchParams(window.location.search), {
-			get: (searchParams, prop) => searchParams.get(prop),
-		});
-		const idToken = params.idtoken;
-		window.getGliaContext = () => ({ idToken });
-	</script>
+	  <button id="glia-logout" type="button">Log out (no refresh)</button>
+
+<script>
+  // Token from ?idtoken=... (read once on page load)
+  var gliaIdToken = new URLSearchParams(window.location.search).get('idtoken');
+
+  // Glia calls this on load and then every second
+  window.getGliaContext = function () {
+    return {idToken: gliaIdToken};
+  };
+
+  document.getElementById('glia-logout').addEventListener('click', function () {
+    gliaIdToken = null;
+    // Also overrides any getGliaContext your page already defines
+    window.getGliaContext = function () {
+      return {idToken: null};
+    };
+    // Remove ?idtoken from the address bar without reloading,
+    // so a manual refresh does not log the visitor back in
+    var url = new URL(window.location.href);
+    url.searchParams.delete('idtoken');
+    window.history.replaceState(null, '', url.toString());
+  });
+</script>
+    
     <script async src="https://api.glia.com/salemove_integration.js"></script>
     <script async src="./modal.js"></script>
     <script async src="./onscreen.js"></script>
